@@ -3,17 +3,41 @@
 		<div class="container">
 
 			<div class="header-left">
-				<div  class="header-left__top">
+
+				<div class="header-left__top">
+					
 					<div class="header-left__logo">
 						<img src="@img/logo.png" alt="">
 					</div>
 					<div class="select-wrapper">
 						<img src="@img/lengSelect.svg" alt="">
-						<select name="form[]" class="form">
+						<select data-show-selected name="leng" class="form">
 							<option value="1" selected> Русский</option>
 							<option value="2">English</option>
 
 						</select>
+					</div>
+
+					<div class="menu-icon icon-menu">
+						<div class="menu-icon__wrapper"></div><span></span>
+					</div>
+					<div class="header__menu ">
+						<div class="header__menu-top">
+							<div class="header-left__logo">
+								<img src="@img/logo_black.png" alt="">
+							</div>
+							<div class="select-wrapper">
+								<img src="@img/lengSelectMenu.svg" alt="">
+								<select data-show-selected name="leng" class="menu-select"
+									data-class-modif="menu-select">
+									<option value="1" selected> Русский</option>
+									<option value="2">English</option>
+
+								</select>
+							</div>
+						</div>
+						<a class="header__menu-phone" href="tel:+7999999999">+ 7 999 99 9999</a>
+						<button class="header-right__btn header__menu-btn">Заказать звонок</button>
 					</div>
 				</div>
 				<h1 class="header-left__title"><span>NeBank </span>— лучше, чем просто банк </h1>

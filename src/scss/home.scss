@@ -7,6 +7,16 @@
   @media (max-width: $pc) {
     gap: 40px;
   }
+  @media (max-width: $tablet) {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-left: 20px;
+  }
+  @media (max-width: $mobile) {
+    padding-left: 1px;
+    gap: 8px;
+  }
+
   &__card-image {
     display: flex;
     align-items: center;
@@ -26,6 +36,16 @@
       font-size: 17px;
       line-height: 23px;
     }
+    @media (max-width: $tablet) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+    @media (max-width: $mobileSmall) {
+      max-width: 40px;
+    }
+    @media (max-width: 570px) {
+      max-width: 120px;
+    }
   }
   &__card-sub-title {
     font-weight: 400;
@@ -37,9 +57,19 @@
       font-size: 16px;
       line-height: 22px;
     }
+    @media (max-width: $tablet) {
+      font-size: 15px;
+      line-height: 20px;
+      max-width: 154px;
+    }
+    // @media (max-width: 409px){
+    //   max-width: 100px;
+
+    // }
   }
   @media (max-width: $mobile) {
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
 //====================================================================================================
@@ -60,11 +90,12 @@
     }
     @media (max-width: $pc) {
       margin: 0 auto;
-      text-align: center;
       font-size: 26px;
       line-height: 35px;
+      text-align: center;
     }
     @media (max-width: $tablet) {
+      max-width: 626px;
       font-size: 22px;
       line-height: 30px;
     }
@@ -77,6 +108,9 @@
     }
     @media (max-width: $tablet) {
       margin-top: 27px;
+    }
+    @media (max-width: $mobile) {
+      flex-direction: column;
     }
   }
   &__card {
@@ -94,9 +128,23 @@
       height: 253px;
     }
     @media (max-width: $tablet) {
-      width: 331px;
+      max-width: 331px;
       height: 236px;
       padding-top: 20px;
+    }
+    @media (max-width: 669px) {
+      width: 100%;
+      height: 266px;
+    }
+    @media (max-width: $mobile) {
+      height: 236px;
+      width: 420px;
+      &:first-child {
+        height: 178px;
+      }
+    }
+    @media (max-width: $mobileSmall) {
+      width: 100%;
     }
   }
   &__card-title {
@@ -117,6 +165,10 @@
     @media (max-width: $tablet) {
       font-size: 15px;
       line-height: 20px;
+      max-width: 270px;
+    }
+    @media (max-width: $mobile) {
+      max-width: 253px;
     }
   }
   &__card-btn {
@@ -132,9 +184,21 @@
     background-position-x: 100px;
     background-position-y: 17px;
     max-width: 135px;
+    &:hover {
+      background-color: #3064d3;
+      transition: all ease 0.3s;
+    }
+    &:active {
+      background-color: #1643a4;
+    }
   }
   @media (max-width: $pc) {
     justify-content: center;
+    align-items: baseline;
+  }
+  @media (max-width: $tablet) {
+    font-size: 16px;
+    line-height: 22px;
   }
 }
 //====================================================================================================
@@ -168,6 +232,9 @@
     gap: 30px;
     align-items: stretch;
     justify-content: center;
+    @media (max-width: 1025px) {
+      flex-direction: column;
+    }
   }
   &__top-left {
     gap: 30px;
@@ -179,6 +246,7 @@
   &__bottom {
     margin-top: 30px;
   }
+
   &__card {
     padding-left: 50px;
     background-color: #f5f8fb;
@@ -189,6 +257,14 @@
       font-size: 26px;
       line-height: 35px;
       color: #2b2b38;
+      @media (max-width: 1025px) {
+        font-size: 22px;
+        line-height: 30px;
+      }
+      @media (max-width: $tablet) {
+        font-size: 18px;
+        line-height: 25px;
+      }
     }
     &__list {
       margin-top: 26px;
@@ -196,15 +272,14 @@
 
     &__list-item {
       max-width: 533px;
-      margin-right: 43px;
       margin-left: 10px;
+      margin-bottom: 13px;
       padding-left: 10px;
       font-weight: 400;
       font-size: 17px;
       line-height: 23px;
       color: #6f6f6f;
       position: relative;
-      margin-bottom: 13px;
       &::before {
         position: absolute;
         content: "";
@@ -214,6 +289,23 @@
         top: 2px;
         background-image: url(../img/listV.svg);
       }
+      @media (max-width: 1025px) {
+        font-size: 16px;
+        line-height: 22px;
+        max-width: 93%;
+      }
+      @media (max-width: $tablet) {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+    &__list-item-last {
+      @media (max-width: 1025px) {
+        max-width: 55%;
+      }
+      @media (max-width: $mobile) {
+        max-width: 90%;
+      }
     }
     &__1 {
       background-image: url("../img/description/1.png");
@@ -221,6 +313,9 @@
       background-size: contain;
       background-position: center bottom;
       height: 383px;
+      @media (max-width: $mobile) {
+        background-size: contain !important;
+      }
     }
     &__2 {
       background-image: url("../img/description/2.png");
@@ -233,12 +328,41 @@
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center bottom;
+      @media (max-width: 1025px) {
+        height: 577px !important;
+        background-size: 75% !important;
+        background-image: url("../img/description/3s.png");
+      }
+      @media (max-width: $mobile) {
+        background-size: 100% !important;
+      }
     }
     &__4 {
       background-image: url("../img/description/4.png");
       background-repeat: no-repeat;
       background-position: right;
       padding-bottom: 49px;
+      @media (max-width: 1024px) {
+        height: 215px !important;
+        background-position: right !important;
+        background-size: 40% !important;
+      }
+      @media (max-width: $mobile) {
+        height: 328px !important;
+        background-position: center 218px !important;
+        background-size: 80% !important;
+      }
+    }
+    @media (max-width: 1024px) {
+      height: 340px;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: auto;
+      background-position: center bottom;
+    }
+    @media (max-width: $mobile) {
+      padding-left: 15px;
+      background-size: 70%;
     }
   }
 }
@@ -246,6 +370,9 @@
 .what-we-can-do {
   margin-top: 124px;
   display: flex;
+  @media (max-width: $pc) {
+    margin-top: 80px;
+  }
 
   &__left {
     padding-left: 76px;
@@ -255,6 +382,14 @@
     span {
       background-color: #33c7d8;
     }
+    @media (max-width: $pc) {
+      padding-left: 32px;
+    }
+    @media (max-width: $mobile) {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
   }
   &__title {
     padding-top: 47px;
@@ -262,6 +397,16 @@
     font-size: 26px;
     line-height: 35px;
     color: #ffffff;
+    @media (max-width: $pc) {
+      font-size: 22px;
+      line-height: 30px;
+      padding-top: 33px;
+    }
+    @media (max-width: $tablet) {
+      font-size: 18px;
+      line-height: 25px;
+      padding-top: 26px;
+    }
   }
   &__text {
     font-weight: 400;
@@ -269,9 +414,19 @@
     line-height: 26px;
     color: #ffffff;
     padding-bottom: 47px;
-    // max-width: 747px;
     padding-right: 45px;
     margin-top: 18px;
+    @media (max-width: $pc) {
+      padding-right: 32px;
+    }
+    @media (max-width: $tablet) {
+      font-size: 17px;
+      line-height: 23px;
+      padding-bottom: 29px;
+      text-align: center;
+    }
+    @media (max-width: $mobile) {
+    }
   }
   &__right {
     border-top-right-radius: 10px;
@@ -281,6 +436,22 @@
     align-items: center;
     justify-content: center;
     flex: 1 0 33.333%;
+    @media (max-width: $mobile) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      padding-top: 45px;
+      padding-bottom: 45px;
+    }
+  }
+  @media (max-width: $pc) {
+    margin-top: 80px;
+  }
+  @media (max-width: $tablet) {
+    margin-top: 70px;
+  }
+  @media (max-width: $mobile) {
+    flex-direction: column;
   }
 }
 //====================================================================================================
@@ -288,11 +459,24 @@
 .fin-tech {
   padding-bottom: 163px;
   background-color: #f5f8fb;
+
   &__inner {
     background-image: url("../img/finTech/bg.png");
     background-repeat: no-repeat;
     background-size: auto;
     background-position: right bottom;
+    @media (max-width: $pc) {
+      background-size: 342px;
+      background-position: right center;
+    }
+    @media (max-width: $tablet) {
+      background-position: bottom;
+      height: 750px;
+      background-size: 300px;
+    }
+    @media (max-width: $mobile) {
+      height: 813px;
+    }
   }
   &__title {
     font-weight: 700;
@@ -304,6 +488,23 @@
     span {
       background: #6fe3f0;
     }
+    @media (max-width: $pc) {
+      font-size: 30px;
+      line-height: 41px;
+      padding-top: 73px;
+      margin: 90px auto 11px;
+    }
+    @media (max-width: $tablet) {
+      font-size: 26px;
+      line-height: 35px;
+      text-align: center;
+      padding-top: 60px;
+      margin: 130px auto 30px;
+    }
+    @media (max-width: $mobile) {
+      max-width: 330px;
+      margin: 56px auto 30px;
+    }
   }
   &__sub-title {
     font-weight: 700;
@@ -314,6 +515,16 @@
     span {
       background-color: #6fe3f0;
     }
+    @media (max-width: $pc) {
+      font-size: 22px;
+      line-height: 30px;
+      margin-top: 36px;
+    }
+    @media (max-width: $tablet) {
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+    }
   }
   &__text {
     margin-bottom: 30px;
@@ -322,6 +533,22 @@
     font-size: 19px;
     line-height: 26px;
     color: #2b2b38;
+    @media (max-width: $pc) {
+      font-size: 17px;
+      line-height: 23px;
+      margin-bottom: 11px;
+      max-width: 542px;
+    }
+    @media (max-width: $tablet) {
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+      margin: auto;
+      margin-bottom: 11px;
+    }
+    @media (max-width: $mobile) {
+      max-width: 330px;
+    }
   }
   &__tiny-text {
     font-weight: 400;
@@ -331,6 +558,22 @@
     margin-top: 18px;
     margin-bottom: 29px;
     max-width: 746px;
+    @media (max-width: $pc) {
+      font-size: 16px;
+      line-height: 22px;
+      margin-top: 16px;
+      margin-bottom: 27px;
+      max-width: 542px;
+    }
+    @media (max-width: $tablet) {
+      font-size: 15px;
+      line-height: 20px;
+      text-align: center;
+      margin: 3px auto 26px;
+    }
+    @media (max-width: $mobile) {
+      max-width: 330px;
+    }
   }
   &__btn {
     background-color: #2053be;
@@ -338,5 +581,15 @@
     &:hover {
       background-color: #3064d3;
     }
+    @media (max-width: $tablet) {
+      padding: 16px 33px;
+      font-size: 16px;
+      line-height: 22px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+  @media (max-width: $pc) {
+    padding-bottom: 80px;
   }
 }

@@ -1,14 +1,25 @@
 // Заголовки, общие БЄМ блоки и проче...
-.whiteBtn{
-    padding: 20px 34px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    font-weight: 700;
-    font-size: 19px;
-    line-height: 26px;
-    color: #2b2b38;
-    &:hover {
-      background-color: #e8e8e8;
-      transition: all ease 0.3s;
-    }
+.whiteBtn {
+  padding: 20px 34px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 26px;
+  color: #2b2b38;
+  &:hover {
+    background-color: #e8e8e8;
+    transition: all ease 0.3s;
   }
+  &:active{
+    background-color:#D9D7D7;
+  }
+  @media (max-width: $pc) {
+    padding: 15px 27px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  @media (max-width: $tablet) {
+    padding: 15px 17px;
+  }
+}
